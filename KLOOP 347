@@ -1,0 +1,62 @@
+import heapq
+
+from collections import defaultdict
+
+def get_itinerary(flights, source, destination, k):
+    prices = defaultdict(dict)
+
+    for u, v, cost in flights:
+        prices[u][v] = cost
+
+    path = [source]
+    visited = set()
+    heap = [(0, source, k + 1, path)]
+
+    while heap:
+        visited.add(u)
+        cost, u, k, path = heapq.heappop(heap)
+
+        # Stop once we reach our destination.
+        if u == destination:
+            return cost, path
+
+        # Decrement k with each flight taken so we do not exceed k connections.
+        if k > 0:
+            for v in prices[u]:
+                if v not in visited:
+                    heapq.heappush(heap, (prices[u][v] + cost, v, k - 1, path + [v]))
+
+    return -1
+    
+    import heapq
+
+from collections import defaultdict
+from copy import copy
+
+def get_itinerary(flights, source, destination, k):
+    costs = defaultdict(lambda: float('inf'))
+    costs[source] = 0
+
+    prevs = {}
+
+    for _ in range(k + 1):
+        new_costs = copy(costs)
+
+        for u, v, cost in flights:
+            if costs[u] + cost < new_costs[v]:
+                new_costs[v] = costs[u] + cost
+                prevs[v] = u
+
+        costs = new_costs
+
+    if costs[destination] == float('inf'):
+        return -1
+    else:
+        path = [destination]
+
+        while path[-1] != source:
+            path.append(prevs[path[-1]])
+        path.reverse()
+
+        return costs[destination], path
+        
