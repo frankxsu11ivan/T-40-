@@ -19,7 +19,7 @@ For example, our traveler wants to go from JFK to LAX with up to 3 connections, 
 Due to some improbably low flight prices, the cheapest itinerary would be JFK -> ATL -> ORD -> LAX, costing $440.
 
 Solution
-Let's first think about how we would approach this problem without the constraint of limiting our traveler to k connections. This reduces to finding the shortest path between two points in a graph, which can be efficiently solved using Dijkstra's algorithm.
+Let's first think about how we would approach this problem without the constraint of limiting our traveler to k connections. This reduces to finding the shortest path between two points in a graph, which can be efficiently solved using Dijkstra's algorithm...
 
 We will maintain a heap that is keyed on the total cost of the journey so far, and which additionally holds the current node and the accumulated path. Initially, this heap will store a single item representing the fact that it costs nothing to begin at our source airport.
 
