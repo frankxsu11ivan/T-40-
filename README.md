@@ -1,5 +1,5 @@
 # T+40.347
-This problem was asked by Airbnb.
+This problem was asked by Airbnb
 
 You are given a huge list of airline ticket prices between different cities around the world on a given day. These are all direct flights. Each element in the list has the format (source_city, destination, price).
 
