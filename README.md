@@ -25,7 +25,7 @@ We will maintain a heap that is keyed on the total cost of the journey so far, a
 
 At each step of the process, we pop the lowest cost item off the heap. Then, we take all unvisited connecting airports and place them on the heap, with their accumulated flight cost and path. Once we reach our destination, we return these values.
 
-To handle the extra constraint, we can add another variable to each heap item representing how many remaining connections are allowed. Initially this will be k + 1, and for each flight taken we will decrement by one. If we reach 0, we know that we cannot continue the current path, so we will skip to the next item.
+To handle the extra constraint, we can add another variable to each heap item representing how many remaining connections are allowed. Initially this will be k + 1, and for each flight taken we will decrement by one. If we reach 0, we know that we cannot continue the current path, so we will skip to the next item...
 
 The time complexity of Dijkstra's algorithm is O(E + V log V). Here, E represents the number of flights in our input and V represents the number of airports. As for space complexity, our heap may store up to V items, each of which can have a path of length k, so we can describe this as O(V * k).
 
