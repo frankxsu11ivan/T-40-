@@ -16,7 +16,7 @@ For example, our traveler wants to go from JFK to LAX with up to 3 connections, 
     ('ATL', 'ORD', 90),
     ('JFK', 'LAX', 500),
 ]
-Due to some improbably low flight prices, the cheapest itinerary would be JFK -> ATL -> ORD -> LAX, costing $440.
+Due to some improbably low flight prices, the cheapest itinerary would be JFK -> ATL -> ORD -> LAX, costing $440...
 
 Solution
 Let's first think about how we would approach this problem without the constraint of limiting our traveler to k connections. This reduces to finding the shortest path between two points in a graph, which can be efficiently solved using Dijkstra's algorithm...
