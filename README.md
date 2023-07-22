@@ -5,7 +5,7 @@ You are given a huge list of airline ticket prices between different cities arou
 
 Consider a user who is willing to take up to k connections from their origin city A to their destination B. Find the cheapest fare possible for this journey and print the itinerary for that journey...
 
-For example, our traveler wants to go from JFK to LAX with up to 3 connections, and our input flights are as follows:.
+For example, our traveler wants to go from JFK to LAX with up to 3 connections, and our input flights are as follows:. .
 
 [
     ('JFK', 'ATL', 150),
